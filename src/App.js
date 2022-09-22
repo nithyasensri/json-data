@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+
+import React from "react";
+import data from "./data.json"
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>React</h2>
+      <div>
+        {data.map((val) => {
+          return (<div>
+            {val.id}
+            {val.title}
+            <img src={val.img} />
+          </div>)
+        })}
+      </div>
+      <p>process running {process.env.REACT_APP_ENV}</p>
     </div>
-  );
+  )
 }
-
 export default App;
+
